@@ -3,7 +3,7 @@ jpsVersion: '1.1'
 id: wp-standalone-optimization
 name: Standalone Optimization for Load Perfomance Tests
 description: Optimization for Load Perfomance Tests
-logo: https://raw.githubusercontent.com/stackharbor-devops/wordpress-cluster/sh-1/images/wp-cluster.png
+logo: https://raw.githubusercontent.com/stackharbor-devops/wordpress-cluster/sh-2/images/wp-cluster.png
 baseUrl: https://raw.githubusercontent.com/stackharbor-devops/wordpress-cluster/sh-1
 
 onInstall:
