@@ -12,12 +12,12 @@ description:
   text: WordPress Standalone Kit with built-in kit for choosing optimal application servers and a set of advanced features for running websites and blogs. WordPress CMS deployed as a lightweight standalone container with minimal allocated resources for cost efficiency.
   short: WordPress Standalone Kit with built-in kit for choosing optimal application servers and a set of advanced features for running websites and blogs.
 
-baseUrl: https://fastly.jsdelivr.net/gh/stackharbor-devops/wordpress@sh-2
+baseUrl: https://fastly.jsdelivr.net/gh/stackharbor-devops/wordpress@sh-3
 
 globals:
   cdnUrl: https://fastly.jsdelivr.net/gh
   isSingleDeploy: ${settings.isSingleDeploy:true}
-  WP_CLUSTER_PATH: ${globals.cdnUrl}/stackharbor-devops/wordpress-cluster@sh-2
+  WP_CLUSTER_PATH: ${globals.cdnUrl}/stackharbor-devops/wordpress-cluster@sh-3
   DB_USER: ${settings.DB_USER:user-[fn.random]}
   DB_PASS: ${settings.DB_PASS:[fn.password(10)]}
   DB_HOST: 127.0.0.1
@@ -127,7 +127,7 @@ settings:
       markup:
 
 mixins:
- - https://fastly.jsdelivr.net/gh/stackharbor-devops/wordpress@sh-2/configs/vers.yaml
+ - https://fastly.jsdelivr.net/gh/stackharbor-devops/wordpress@sh-3/configs/vers.yaml
  - /scripts/common.yml
 
 onInstall:
@@ -190,7 +190,7 @@ actions:
         DOMAIN: ${response.domains} 
 
   installLEaddon:
-    - install: ${globals.cdnUrl}/stackharbor-devops/lets-encrypt@sh-2/manifest.jps
+    - install: ${globals.cdnUrl}/stackharbor-devops/lets-encrypt@sh-3/manifest.jps
       nodeGroup: cp
       skipEmail: true
       settings:
@@ -254,7 +254,7 @@ actions:
 
   setupNode:
     - log: OPTIMIZATION
-    - install: ${globals.cdnUrl}/stackharbor-devops/templates@sh-2/config_v2.jps
+    - install: ${globals.cdnUrl}/stackharbor-devops/templates@sh-3/config_v2.jps
       settings:
         targetGroup: cp
         targetNodes: ${this.nodeId}
@@ -264,7 +264,7 @@ actions:
     - log: Create user for DataBase
     - cmd [cp]: |-
         wget ${baseUrl}/configs/sqldb/wordpress.cnf -O /etc/mysql/conf.d/wordpress.cnf &>> /var/log/run.log;
-        wget ${globals.cdnUrl}/stackharbor-devops/mysql-cluster@sh-2/scripts/setupUser.sh -O ~/setupUser.sh &>> /var/log/run.log;
+        wget ${globals.cdnUrl}/stackharbor-devops/mysql-cluster@sh-3/scripts/setupUser.sh -O ~/setupUser.sh &>> /var/log/run.log;
         bash ~/setupUser.sh ${globals.DB_USER} ${globals.DB_PASS} &>> /var/log/run.log;
         jem passwd set -p ${globals.DB_PASS} &>> /var/log/run.log;
       user: root
