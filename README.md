@@ -23,7 +23,7 @@ This package creates a dedicated WordPress environment with a set of built-in ad
 
 To get your WordPress Standalone solution, click the "**Deploy to Cloud**" button below, specify your email address within the widget, choose one of the [Virtuozzo Public Cloud Providers](https://www.virtuozzo.com/application-platform-partners/), and confirm by clicking **Install**.
 
-[![Deploy to Cloud](https://raw.githubusercontent.com/stackharbor-devops/common/sh-4/images/deploy-to-cloud.png)](https://www.virtuozzo.com/install/?manifest=https://raw.githubusercontent.com/jelastic-jps/wordpress/refs/heads/v2.2.0/manifest.yml)
+[![Deploy to Cloud](https://raw.githubusercontent.com/stackharbor-devops/common/sh-5/images/deploy-to-cloud.png)](https://www.virtuozzo.com/install/?manifest=https://raw.githubusercontent.com/jelastic-jps/wordpress/refs/heads/v2.2.0/manifest.yml)
 
 > If you already have a Virtuozzo Application Platform (VAP) account, you can deploy this solution from the [Marketplace](https://www.virtuozzo.com/application-platform-docs/marketplace/) or [import](https://www.virtuozzo.com/application-platform-docs/environment-import/) a manifest file from this repository.
 
